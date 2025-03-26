@@ -27,7 +27,6 @@ public class MovieController {
     @GetMapping("/movies")
     /* http://localhost:8080/movies */
     public String movies(Model model) {
-        // Aggiungi la lista di movies al modello per visualizzarla nella vista
         model.addAttribute("movies", movies);
         return "movie";
     }
@@ -47,7 +46,7 @@ public class MovieController {
 
         // Se non trovi il film, puoi gestire il caso (esempio: mostrare un errore)
         if (foundMovie == null) {
-            return "movieNotFound"; // Aggiungi una pagina per film non trovato
+            return "notFound"; // Aggiungi una pagina per film non trovato
         }
 
         // Aggiungi il film trovato al modello per visualizzarlo nella vista
