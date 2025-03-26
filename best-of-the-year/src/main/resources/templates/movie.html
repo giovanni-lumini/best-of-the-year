@@ -13,7 +13,16 @@
     </th:block>
 </head>
 <body>
+    
+    <h1>Lista dei Film</h1>
 
+    <!-- forEach per stampare tutti i film dell'ArrayList -->
+    <ul>
+        <li th:each="movie : ${movies}">
+            <span th:text="'Id: ' + ${movie.id}"></span> - 
+            <span th:text="'Titolo: ' + ${movie.titolo}"></span>
+        </li>
+    </ul>
 
 </body>
 </html>

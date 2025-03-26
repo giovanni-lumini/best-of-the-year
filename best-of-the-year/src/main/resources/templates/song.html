@@ -14,6 +14,15 @@
 </head>
 <body>
 
+    <h1>Lista delle Canzoni</h1>
+
+    <!-- forEach per stampare tutti i film dell'ArrayList -->
+    <ul>
+        <li th:each="song : ${songs}">
+            <span th:text="'Id: ' + ${song.id}"></span> - 
+            <span th:text="'Titolo: ' + ${song.titolo}"></span>
+        </li>
+    </ul>
 
 </body>
 </html>
