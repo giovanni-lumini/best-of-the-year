@@ -6,6 +6,7 @@ import org.lessons.java.spring.best_of_the_year.classes.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -31,5 +32,12 @@ public class SongController {
         model.addAttribute("songs", songs);
 
         return "song";
+    }
+
+    @GetMapping("/song/{id}")
+    /* http://localhost:8080/song/1 */
+    public String songById(Model model, @PathVariable("id") String id) {
+        model.addAttribute("id", id);
+        return "songById";
     }
 }

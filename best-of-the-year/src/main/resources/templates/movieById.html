@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Movie</title>
     <!-- fragment styles-->
     <th:block th:fragment="styles">
         <!-- link file statici -->
@@ -12,16 +12,10 @@
         <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
     </th:block>
 </head>
-<body> 
+<body>
     <!-- importo il frammento header -->
     <th:block th:replace="~{fragments :: header}"/>
-
-    <div class="text-center m-5">
-        <h1 th:text="'Best of the year by ' +  ${name}" ></h1>
-        
-        <div class="border border-dark p-3 mt-3 m-auto" style="width: 30rem">
-            Clicca i link sopra e scopri i migliori film e le migliori canzoni dell'anno
-        </div>
-    </div>
+    
+    <h1 th:text="${id}"></h1>
 </body>
 </html>

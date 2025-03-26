@@ -13,16 +13,23 @@
     </th:block>
 </head>
 <body>
+    <!-- importo il frammento header -->
+    <th:block th:replace="~{fragments :: header}"/>
 
-    <h1>Lista delle Canzoni</h1>
+    <div class=" container m-auto text-center">
+        <div class="my-5">
+            <!-- importo il frammento title -->
+            <th:block th:replace="~{fragments :: title(pageTitle='Best Songs')}" />
+        </div>
 
-    <!-- forEach per stampare tutti i film dell'ArrayList -->
-    <ul>
-        <li th:each="song : ${songs}">
+        <!-- forEach per stampare tutti i film dell'ArrayList -->
+        <div th:each="song : ${songs}" class="border border-dark p-3 mb-3 m-auto" style="width: 30rem">
             <span th:text="'Id: ' + ${song.id}"></span> - 
             <span th:text="'Titolo: ' + ${song.titolo}"></span>
-        </li>
-    </ul>
+        </div>
 
+        <!-- importo il frammento button -->
+        <div th:insert="~{fragments :: button('/?name=Giovanni', 'Torna alla homepage')}" class="mt-5"></div>
+    </div>
 </body>
 </html>
