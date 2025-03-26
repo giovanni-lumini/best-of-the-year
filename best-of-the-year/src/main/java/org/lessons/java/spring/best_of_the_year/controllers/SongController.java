@@ -36,7 +36,7 @@ public class SongController {
 
     @GetMapping("/song/{id}")
     /* http://localhost:8080/song/1 */
-    public String songById(Model model, @PathVariable("id") String id) {
+    public String songById(Model model, @PathVariable("id") int id) {
         model.addAttribute("id", id);
         return "songById";
     }
