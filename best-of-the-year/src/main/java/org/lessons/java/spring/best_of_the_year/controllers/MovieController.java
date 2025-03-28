@@ -34,22 +34,21 @@ public class MovieController {
     @GetMapping("/movie/{id}")
     /* http://localhost:8080/movie/1 */
     public String movieById(Model model, @PathVariable("id") int id) {
-        // Cerca il film con l'ID specificato
+        // cerca il film con l'id specificato
         Movie foundMovie = null;
         // ciclo forEach
         for (Movie movie : movies) {
             if (movie.getId() == id) {
                 foundMovie = movie;
-                break; // Esce dal ciclo se trova il film
+                break;
             }
         }
 
-        // Se non trovi il film, puoi gestire il caso (esempio: mostrare un errore)
+        // se non si trova il film
         if (foundMovie == null) {
-            return "notFound"; // Aggiungi una pagina per film non trovato
+            return "notFound";
         }
 
-        // Aggiungi il film trovato al modello per visualizzarlo nella vista
         model.addAttribute("movie", foundMovie);
         return "movieById";
     }
